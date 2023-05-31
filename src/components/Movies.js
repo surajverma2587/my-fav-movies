@@ -1,13 +1,11 @@
 import { MovieCard } from "./MovieCard";
 
-export const Movies = () => {
+export const Movies = ({ movies }) => {
   return (
-    <div>
-      <MovieCard />
-      <MovieCard />
-      <MovieCard />
-      <MovieCard />
-      <MovieCard />
+    <div className="d-flex justify-content-evenly flex-wrap">
+      {movies.map((movie) => {
+        return <MovieCard imageUrl={movie.imageUrl} title={movie.title} />;
+      })}
     </div>
   );
 };
